@@ -1,8 +1,5 @@
 # Agentic Credit Scoring API Documentation
 
-## Overview
-AI-powered credit scoring system that predicts serious delinquency risk with explainable AI capabilities.
-
 ## Base URL
 `http://localhost:8000`
 

@@ -1,4 +1,4 @@
-# main.py - FINAL PRODUCTION VERSION
+# main.py
 import os
 import pandas as pd
 import numpy as np
@@ -31,7 +31,7 @@ def main():
     y_train = train_processed[settings.TARGET_COLUMN]
     X_test = test_processed[processor.feature_columns]
     
-    print(f"\n📊 Dataset Summary:")
+    print(f"\n Dataset Summary:")
     print(f"Training data: {X_train.shape}")
     print(f"Test data: {X_test.shape}")
     print(f"Default rate: {y_train.mean()*100:.2f}%")
@@ -63,7 +63,7 @@ def main():
     print(f"Submission file saved to {submission_path}")
     
     # Detailed statistics
-    print(f"\n📊 PREDICTION ANALYSIS:")
+    print(f"\n PREDICTION ANALYSIS:")
     print(f"Total predictions: {len(probabilities):,}")
     print(f"Average probability: {probabilities.mean():.4f}")
     print(f"Risk distribution:")
@@ -80,7 +80,7 @@ def main():
         percentage = (count / len(probabilities)) * 100
         print(f"  {category}: {count:>6,} applicants ({percentage:5.1f}%)")
     
-    print(f"\n🎉 MODEL TRAINING SUCCESSFUL!")
+    print(f"\n MODEL TRAINING SUCCESSFUL!")
     print("Next: Build the Agentic API with explanation capabilities")
 
 if __name__ == "__main__":

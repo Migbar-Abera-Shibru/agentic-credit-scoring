@@ -3,13 +3,13 @@ import requests
 import json
 
 def interactive_demo():
-    print("🎪 Agentic Credit Scoring Interactive Demo")
+    print(" Agentic Credit Scoring Interactive Demo")
     print("=" * 50)
     
     base_url = "http://localhost:8000"
     
     while True:
-        print("\n📋 Choose an option:")
+        print("\n Choose an option:")
         print("1. Test pre-defined scenarios")
         print("2. Enter custom applicant data")
         print("3. Exit")
@@ -51,7 +51,7 @@ def test_predefined_scenarios(base_url):
     ]
     
     for scenario in scenarios:
-        print(f"\n🎯 Testing: {scenario['name']}")
+        print(f"\n Testing: {scenario['name']}")
         test_applicant(base_url, scenario["features"])
 
 def test_custom_applicant(base_url):
@@ -77,7 +77,7 @@ def test_applicant(base_url, features):
         predict_response = requests.post(f"{base_url}/predict", json={"features": features})
         prediction = predict_response.json()
         
-        print(f"\n📊 PREDICTION RESULTS:")
+        print(f"\n PREDICTION RESULTS:")
         print(f"Probability of Delinquency: {prediction['probability']:.1%}")
         
         # Get agent analysis
@@ -89,11 +89,11 @@ def test_applicant(base_url, features):
         agent_result = agent_response.json()
         
         print(f"Risk Level: {agent_result['risk_level']}")
-        print(f"\n🔍 RISK FACTORS:")
+        print(f"\n  RISK FACTORS:")
         for factor in agent_result['risk_factors']:
             print(f"  • {factor}")
         
-        print(f"\n💡 RECOMMENDATIONS:")
+        print(f"\n RECOMMENDATIONS:")
         for recommendation in agent_result['recommendations']:
             print(f"  • {recommendation}")
             
@@ -105,13 +105,13 @@ def test_applicant(base_url, features):
         
         if whatif_response.status_code == 200:
             whatif_result = whatif_response.json()
-            print(f"\n🔮 WHAT-IF SCENARIO:")
+            print(f"\n WHAT-IF SCENARIO:")
             for reasoning in whatif_result['reasoning'][-1:]:  # Last reasoning line
                 if "Scenario simulation" in reasoning:
                     print(f"  {reasoning}")
         
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
 
 if __name__ == "__main__":
     interactive_demo()

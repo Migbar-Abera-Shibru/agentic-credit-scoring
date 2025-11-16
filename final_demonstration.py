@@ -3,7 +3,7 @@ import requests
 import json
 
 def final_demonstration():
-    print("🎯 FINAL AGENTIC CREDIT SCORING DEMONSTRATION")
+    print(" FINAL AGENTIC CREDIT SCORING DEMONSTRATION")
     print("=" * 50)
     
     base_url = "http://localhost:8000"
@@ -11,7 +11,7 @@ def final_demonstration():
     # Test cases that show different risk levels
     test_cases = [
         {
-            "name": "🚨 VERY HIGH RISK APPLICANT",
+            "name": " VERY HIGH RISK APPLICANT",
             "features": {
                 "RevolvingUtilizationOfUnsecuredLines": 1.2,  # Over 100% utilization
                 "age": 21,
@@ -26,7 +26,7 @@ def final_demonstration():
             }
         },
         {
-            "name": "✅ IDEAL APPLICANT", 
+            "name": " IDEAL APPLICANT", 
             "features": {
                 "RevolvingUtilizationOfUnsecuredLines": 0.1,
                 "age": 45,
@@ -56,20 +56,20 @@ def final_demonstration():
             if response.status_code == 200:
                 result = response.json()
                 
-                print(f"🎯 Probability: {result['probability']:.1%}")
-                print(f"📊 Risk Level: {result['risk_level']}")
+                print(f" Probability: {result['probability']:.1%}")
+                print(f" Risk Level: {result['risk_level']}")
                 
                 print(f"\n🔍 REASONING:")
                 for reasoning in result['reasoning'][:4]:  # Show first 4 reasoning steps
                     print(f"   {reasoning}")
                 
                 if result['risk_factors']:
-                    print(f"\n⚠️  RISK FACTORS:")
+                    print(f"\n  RISK FACTORS:")
                     for factor in result['risk_factors']:
                         print(f"   • {factor}")
                 
                 if result['recommendations']:
-                    print(f"\n💡 RECOMMENDATIONS:")
+                    print(f"\n RECOMMENDATIONS:")
                     for rec in result['recommendations']:
                         print(f"   • {rec}")
                 

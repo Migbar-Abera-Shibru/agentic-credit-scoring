@@ -80,7 +80,7 @@ class CreditAgent:
     
     def _features_to_dataframe(self, features: Dict[str, Any]):
         """Convert features dict to DataFrame with correct column order"""
-        # Expected features in correct order
+        # Expected features 
         expected_features = [
             'RevolvingUtilizationOfUnsecuredLines', 'age', 'NumberOfTime30-59DaysPastDueNotWorse',
             'DebtRatio', 'MonthlyIncome', 'NumberOfOpenCreditLinesAndLoans', 

@@ -1,4 +1,4 @@
-# src/credit_data_processor.py - CORRECTED
+# src/credit_data_processor.py
 import pandas as pd
 import numpy as np
 from typing import Tuple, Dict, Any
@@ -47,7 +47,7 @@ class CreditDataProcessor:
         train_processed = self.handle_missing_values(train_df)
         test_processed = self.handle_missing_values(test_df)
         
-        # Define feature columns (EXCLUDE target and ID from features)
+        # Define feature columns 
         all_columns = train_processed.columns.tolist()
         self.feature_columns = [col for col in all_columns 
                                if col not in [self.target_column, self.id_column]]
@@ -60,13 +60,13 @@ class CreditDataProcessor:
         """Handle missing values in credit data"""
         df_clean = df.copy()
         
-        # MonthlyIncome - fill with median (common approach for income)
+        # MonthlyIncome 
         if 'MonthlyIncome' in df_clean.columns and df_clean['MonthlyIncome'].isnull().any():
             median_income = df_clean['MonthlyIncome'].median()
             df_clean['MonthlyIncome'] = df_clean['MonthlyIncome'].fillna(median_income)
             print(f"Filled {df_clean['MonthlyIncome'].isnull().sum()} missing MonthlyIncome with median: {median_income:.2f}")
         
-        # NumberOfDependents - fill with mode (most common value)
+        # NumberOfDependents 
         if 'NumberOfDependents' in df_clean.columns and df_clean['NumberOfDependents'].isnull().any():
             mode_dependents = df_clean['NumberOfDependents'].mode()[0] if not df_clean['NumberOfDependents'].mode().empty else 0
             df_clean['NumberOfDependents'] = df_clean['NumberOfDependents'].fillna(mode_dependents)
