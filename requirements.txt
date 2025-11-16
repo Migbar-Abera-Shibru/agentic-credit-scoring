@@ -1,0 +1,15 @@
+# Core dependencies
+fastapi
+uvicorn
+pydantic
+pandas
+numpy
+scikit-learn
+joblib
+python-dotenv
+pydantic-settings
+xgboost
+lightgbm
+requests
+matplotlib
+seaborn
